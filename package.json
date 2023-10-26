@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "npx vuepress dev docs",
-    "build": "npx vuepress build docs"
+    "docs:build": "npx vuepress build docs"
   },
   "repository": {
     "type": "git",
