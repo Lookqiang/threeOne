@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Lookqiang/threeOne#readme",
   "devDependencies": {
+    "@vuepress/theme-blog": "^2.3.3",
     "vuepress": "^1.9.10"
   }
 }
