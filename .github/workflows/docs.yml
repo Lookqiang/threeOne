@@ -10,10 +10,10 @@ jobs:
           persist-credentials: false
 
       - name: vuepress-deploy
-        uses: jenkey2011/vuepress-deploy@master
+        uses: jenkey2011/vuepress-deploy@master #使用jenkey2011/vuepress-deploy项目
         env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          TARGET_REPO: Lookqiang/threeOne
-          TARGET_BRANCH: blog
-          BUILD_SCRIPT: yarn && yarn docs:build
-          BUILD_DIR: docs/.vuepress/dist
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} #目标仓库
+          TARGET_REPO: Lookqiang/threeOne #目标仓库 <USERNAME>（用户名）/<REPO>（仓库名）
+          TARGET_BRANCH: blog #目标仓库的分支
+          BUILD_SCRIPT: yarn && yarn docs:build #构建脚本：自己创建运行的命令 package.json-> scripts:{docs:build:"vuepress build docs"}
+          BUILD_DIR: docs/.vuepress/dist #配置构建产物的目录
