@@ -1,6 +1,6 @@
 ---
 home: true
-heroText: Hero 标题
+heroText: 这是主标题
 tagline: Hero 副标题
 features:
   - title: 简洁至上
