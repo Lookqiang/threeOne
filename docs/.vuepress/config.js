@@ -6,7 +6,7 @@ module.exports = {
       { text: "Guide", link: "/guide/" },
     ],
     sidebar: {
-      "/guide/": [ "one" /* /foo/one.html */, "two" /* /foo/two.html */],
+      "/guide/": ["one" /* /foo/one.html */, "node管理" /* /foo/two.html */],
     },
   },
 };
