@@ -3,10 +3,10 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: "Home", link: "/" },
-      { text: "Guide", link: "/guide/" },
+      { text: "日常", link: "/guide/" },
     ],
     sidebar: {
-      "/guide/": ["one" /* /foo/one.html */, "node管理" /* /foo/two.html */],
+      "/guide/": ["one" /* /foo/one.html */, "node管理", "node-sass升级为sass" /* /foo/two.html */],
     },
-  },
+  }
 };
