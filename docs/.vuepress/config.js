@@ -1,3 +1,5 @@
+//基于目录的自动引入
+
 module.exports = {
   base: "/threeOne/",
   themeConfig: {
@@ -6,7 +8,7 @@ module.exports = {
       { text: "日常", link: "/guide/" },
     ],
     sidebar: {
-      "/guide/": ["one" /* /foo/one.html */, "node管理", "node-sass升级为sass" /* /foo/two.html */],
+      "/guide/": ["one", "node管理", "node-sass升级为sass",'钉钉小程序'],
     },
-  }
+  },
 };

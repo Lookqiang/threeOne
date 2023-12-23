@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const data = { ok: true, text: "hello world", text1: "obj.text1 " };
+    let activeEffect;
+    function effect(fn) {
+      const effectFn = () => {
+        activeEffect = effectFn;
+        fn();
+      };
+      effectFn();
+    }
+    const bucket = new WeakMap();
+    function track(target, key) {
+      if (!activeEffect) return target[key];
+      let depsMap = bucket.get(target);
+      if (!depsMap) {
+        bucket.set(target, (depsMap = new Map()));
+      }
+      let deps = depsMap.get(key);
+      if (!deps) {
+        depsMap.set(key, (deps = new Set()));
+      }
+      deps.add(activeEffect);
+    }
+    function trigger(target, key, newVal) {
+      const depsMap = bucket.get(target);
+      if (!depsMap) return;
+      const effects = depsMap.get(key);
+      const effectsToRun = new Set(effects);
+      effectsToRun.forEach((fn) => {
+        fn();
+      });
+    }
+    
+
+    const obj = new Proxy(data, {
+      get(target, key) {
+        track(target, key);
+        return target[key];
+      },
+      set(target, key, newVal) {
+        target[key] = newVal;
+        trigger(target, key, newVal);
+      },
+    });
+    
+    effect(function effectFn() {
+      document.body.innerText = obj.ok ? obj.text : "not";
+    });
+  </script>
+</html>

@@ -35,7 +35,7 @@ npm install node-sass@[本地node所对应的node-sass版本]
 
 在使用 npm install 安装 node-sass 时，会从 github.com 上下载 .node 文件。由于国内网络环境的问题，这个下载时间可能会很长，甚至导致超时失败。（这也是经常遇到的问题）
 
-**解决这种情况下不仅要使用--registry 参数指定 npm 包的下载源，还需要使用--sass_binary_site 参数指定 sass 二进制文件的下载源**
+**解决这种情况下不仅要使用--registry 参数指定 npm 包的下载源，还需要使用--sass_binary_site 参数指定 sass 二进制文件的下载源（速度也是非常慢的）**
 
 ```js
 # 查看本地node版本
